@@ -1,4 +1,4 @@
-import { Link } from '@/components/layout/components/link';
+import { Link } from '@/components/link';
 
 import styles from './navbar.module.scss';
 
