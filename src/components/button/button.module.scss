@@ -1,0 +1,25 @@
+@use '@/styles/variables.scss' as *;
+
+.button {
+  display: flex;
+  padding: 25px 54px;
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: $text-color-secondary;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.primary {
+  background: $controls-bg-primary;
+}
+
+.secondary {
+  background: $controls-bg-tertiary;
+}
+
+.text {
+  color: $text-color-accent;
+}

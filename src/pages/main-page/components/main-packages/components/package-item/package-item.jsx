@@ -1,3 +1,5 @@
+import { Button } from '@/components/button';
+
 import styles from './package-item.module.scss';
 
 export const PackageItem = ({ package: { id, title, price, description } }) => {
@@ -7,6 +9,9 @@ export const PackageItem = ({ package: { id, title, price, description } }) => {
       <div className={styles.packageText}>
         <span className={styles.packagePrice}>{price}</span>
         <span className={styles.packageDescription}>{description}</span>
+        <Button variant="primary" additionalClassname={styles.packageButton}>
+          Оставить заявку
+        </Button>
       </div>
     </div>
   );
