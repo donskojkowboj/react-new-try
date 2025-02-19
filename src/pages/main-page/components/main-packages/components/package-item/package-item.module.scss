@@ -3,6 +3,7 @@
 .packageItem {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   flex-basis: 360px;
   border: 2px solid $bg-color-quaternary;
@@ -71,6 +72,10 @@
 
   .packageDescription {
     font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .packageButton {
     margin-top: 20px;
   }
 }
