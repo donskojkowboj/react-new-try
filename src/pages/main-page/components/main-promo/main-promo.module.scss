@@ -14,7 +14,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 50px;
     height: 100%;
 
     .text {
@@ -42,6 +41,10 @@
       width: 783px;
       height: auto;
     }
+  }
+
+  .promoButton {
+    margin-top: 50px;
   }
 }
 
