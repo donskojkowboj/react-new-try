@@ -3,6 +3,7 @@
 .packageItem {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   flex-basis: 360px;
   border: 2px solid $bg-color-quaternary;
@@ -58,10 +59,11 @@
 
   .packageText {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     margin-top: 60px;
-    margin-bottom: 33px;
   }
 
   .packagePrice {
@@ -70,8 +72,13 @@
   }
 
   .packageDescription {
-    font-size: 18px;
     margin-top: 20px;
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+
+  .packageButton {
+    margin-top: auto;
   }
 }
 

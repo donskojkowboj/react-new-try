@@ -1,0 +1,30 @@
+@use '@/styles/variables.scss' as *;
+
+.button {
+  display: flex;
+  padding: 25px 54px;
+  justify-content: center;
+  align-items: center;
+  font: inherit;
+  color: $text-color-secondary;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: all 0.5s ease-out;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.primary {
+  background: $controls-bg-primary;
+}
+
+.secondary {
+  background: $controls-bg-tertiary;
+}
+
+.text {
+  padding: 0;
+  color: $text-color-accent;
+}
