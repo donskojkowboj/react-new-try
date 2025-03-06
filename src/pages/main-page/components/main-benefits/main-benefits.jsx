@@ -1,4 +1,5 @@
 import { Container } from '@/components/container';
+import { BenefitItem } from '@/pages/main-page/components/main-benefits/benefit-item/benefit-item.jsx';
 
 import styles from './main-benefits.module.scss';
 
@@ -31,7 +32,16 @@ export const MainBenefits = () => {
       <Container>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Что вы получите после курса</h2>
-          <div className={styles.items}>{/*Здесь должны быть отрисованы элементы*/}</div>
+          <div className={styles.items}>
+            {benefitItems.map((item) => (
+              <BenefitItem
+                key={item.id}
+                title={item.subtitle}
+                description={item.description}
+                tooltipText={item.tooltip}
+              />
+            ))}
+          </div>
         </div>
       </Container>
     </section>
