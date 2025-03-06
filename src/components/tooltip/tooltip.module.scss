@@ -1,0 +1,50 @@
+@use '@/styles/variables.scss' as *;
+
+.tooltip {
+  padding: 10px;
+  transform: translateY(-10px);
+  &:hover {
+    .description {
+      display: inline-block;
+    }
+  }
+  .description {
+    position: absolute;
+    display: none;
+    width: max-content;
+    max-width: 255px;
+    bottom: 100%;
+    font-weight: 400;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: $bg-color-primary;
+    box-shadow: 0 2px 8px 0 #1410241a;
+    font-size: 16px;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      background-color: #14102414;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+    }
+    &:hover {
+      opacity: 0.4;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.4;
+      }
+    }
+  }
+}

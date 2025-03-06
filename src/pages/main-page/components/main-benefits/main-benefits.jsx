@@ -1,5 +1,7 @@
 import { Container } from '@/components/container';
 
+import { BenefitItem } from './benefit-item';
+
 import styles from './main-benefits.module.scss';
 
 // eslint-disable-next-line no-unused-vars
@@ -31,7 +33,16 @@ export const MainBenefits = () => {
       <Container>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Что вы получите после курса</h2>
-          <div className={styles.items}>{/*Здесь должны быть отрисованы элементы*/}</div>
+          <div className={styles.items}>
+            {benefitItems.map((item) => (
+              <BenefitItem
+                key={item.id}
+                title={item.subtitle}
+                description={item.description}
+                tooltipText={item.tooltip}
+              />
+            ))}
+          </div>
         </div>
       </Container>
     </section>
