@@ -4,7 +4,6 @@ import { BenefitItem } from './benefit-item';
 
 import styles from './main-benefits.module.scss';
 
-// eslint-disable-next-line no-unused-vars
 const benefitItems = [
   {
     id: 1,
@@ -35,12 +34,7 @@ export const MainBenefits = () => {
           <h2 className={styles.title}>Что вы получите после курса</h2>
           <div className={styles.items}>
             {benefitItems.map((item) => (
-              <BenefitItem
-                key={item.id}
-                title={item.subtitle}
-                description={item.description}
-                tooltipText={item.tooltip}
-              />
+              <BenefitItem key={item.id} item={item} />
             ))}
           </div>
         </div>

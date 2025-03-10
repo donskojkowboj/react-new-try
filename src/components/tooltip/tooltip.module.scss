@@ -1,50 +1,57 @@
 @use '@/styles/variables.scss' as *;
 
 .tooltip {
-  padding: 10px;
-  transform: translateY(-10px);
-  &:hover {
-    .description {
-      display: inline-block;
-    }
-  }
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+
   .description {
     position: absolute;
-    display: none;
     width: max-content;
     max-width: 255px;
+    left: 0;
     bottom: 100%;
     font-weight: 400;
     padding: 15px 20px;
     border-radius: 5px;
     background: $bg-color-primary;
-    box-shadow: 0 2px 8px 0 #1410241a;
+    box-shadow: 0 2px 8px 0 $shadow-tooltip-descr;
     font-size: 16px;
+    z-index: 100;
   }
+
   .icon {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1000;
+
+    svg {
+      z-index: 10;
+    }
 
     &:before {
       content: '';
       position: absolute;
-      z-index: 0;
-      background-color: #14102414;
+      z-index: 1;
+      background-color: $controls-bg-quaternary;
       width: 24px;
       height: 24px;
       border-radius: 100%;
     }
-    &:hover {
-      opacity: 0.4;
-    }
 
     &:hover {
-      svg {
+      &::before {
         opacity: 0.4;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .tooltip {
+    .description {
+      transform: translateX(-45%);
     }
   }
 }
