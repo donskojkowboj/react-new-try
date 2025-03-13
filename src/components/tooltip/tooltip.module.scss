@@ -14,7 +14,7 @@
     padding: 15px 20px;
     border-radius: 5px;
     background: $bg-color-primary;
-    box-shadow: 0 2px 8px 0 $shadow-light;
+    box-shadow: $shadow-light;
     font-size: 16px;
     z-index: 100;
   }
