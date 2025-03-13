@@ -3,7 +3,6 @@
 .tooltip {
   position: relative;
   display: inline-flex;
-  width: fit-content;
 
   .description {
     position: absolute;
@@ -15,7 +14,7 @@
     padding: 15px 20px;
     border-radius: 5px;
     background: $bg-color-primary;
-    box-shadow: 0 2px 8px 0 $shadow-tooltip-descr;
+    box-shadow: 0 2px 8px 0 $shadow-light;
     font-size: 16px;
     z-index: 100;
   }
@@ -27,13 +26,12 @@
     cursor: pointer;
 
     svg {
-      z-index: 10;
+      z-index: 1;
     }
 
     &:before {
       content: '';
       position: absolute;
-      z-index: 1;
       background-color: $controls-bg-quaternary;
       width: 24px;
       height: 24px;
