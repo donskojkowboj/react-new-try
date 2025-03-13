@@ -1,0 +1,55 @@
+@use '@/styles/variables.scss' as *;
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+
+  .description {
+    position: absolute;
+    width: max-content;
+    max-width: 255px;
+    left: 0;
+    bottom: 100%;
+    font-weight: 400;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: $bg-color-primary;
+    box-shadow: $shadow-light;
+    font-size: 16px;
+    z-index: 100;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      z-index: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-color: $controls-bg-quaternary;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .tooltip {
+    .description {
+      transform: translateX(-45%);
+    }
+  }
+}
