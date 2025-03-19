@@ -1,0 +1,19 @@
+@use '@/styles/variables.scss' as *;
+
+.inputContainer {
+  border-radius: 5px;
+  border: none;
+  background: $input-bg-color;
+  padding: 19px 20px;
+  color: $text-color-input;
+  font-size: 18px;
+  line-height: 1;
+
+  .input {
+    width: 100%;
+  }
+
+  .error {
+    color: $text-color-accent;
+  }
+}
