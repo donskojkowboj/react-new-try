@@ -1,16 +1,19 @@
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { Button } from '@/components/button';
 import { Input } from '@/components/input';
-import { feedbackSchema } from '@/pages/main-page/components/main-form/helpers/schema';
+import { PhoneInput } from '@/components/input/components/phone-input';
+
+import { feedbackSchema } from '../../helpers/schema';
 
 import styles from './form.module.scss';
 
 export const Form = () => {
   const {
-    control,
     handleSubmit,
+    register,
+    control,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -27,26 +30,25 @@ export const Form = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <Controller
+      <Input
+        id="name"
+        register={register('name')}
+        placeholder="Имя"
         name="name"
-        control={control}
-        render={({ field }) => <Input {...field} placeholder="Имя" error={errors.name?.message} />}
+        error={errors.name?.message}
       />
-
-      <Controller
+      <PhoneInput
         name="phone"
         control={control}
-        render={({ field }) => (
-          <Input type="tel" {...field} placeholder="Телефон" error={errors.phone?.message} />
-        )}
+        error={errors.phone?.message}
+        placeholder="Телефон"
       />
-
-      <Controller
+      <Input
+        id="email"
+        register={register('email')}
+        placeholder="E-mail"
         name="email"
-        control={control}
-        render={({ field }) => (
-          <Input type="email" {...field} placeholder="E-mail" error={errors.email?.message} />
-        )}
+        error={errors.email?.message}
       />
 
       <Button variant="secondary" additionalClassname={styles.button}>

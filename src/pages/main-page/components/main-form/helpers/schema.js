@@ -5,7 +5,7 @@ export const feedbackSchema = yup.object().shape({
     .string()
     .required('Имя обязательно')
     .min(2, 'Минимум 2 символа')
-    .matches(/^[а-яА-Я]+$/, 'Только русские буквы'),
+    .matches(/^[а-яА-ЯёЁ]+(\s[а-яА-ЯёЁ]+)*$/, 'Только русские буквы'),
   phone: yup
     .string()
     .required('Телефон обязателен')
